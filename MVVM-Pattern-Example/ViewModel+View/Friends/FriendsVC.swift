@@ -16,17 +16,17 @@ class FriendsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViewConfigurations()
         viewModel = FriendsViewModel()
-        
         viewModel.didFinishLoadingFriends = {
             [weak self] success in
-            
             guard success == true else {
                 print("Something went wrong")
                 return
             }
             self?.friendsTableView.reloadData()
         }
+        
     }
     
     private func setUpViewConfigurations(){
@@ -45,7 +45,10 @@ extension FriendsVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier) as! PersonTableViewCell
         //Here, we inject the cell viewModel with its model
-        cell.viewModel = PersonCellViewModel(with: viewModel.friendCell(for: indexPath))
+        let personCellModel = PersonCellViewModel(with: viewModel.friendCell(for: indexPath))
+        personCellModel.updateCellAt = viewModel.updateCellAt
+        cell.viewModel = personCellModel
+        cell.selectionStyle = .none
         return cell
     }
     

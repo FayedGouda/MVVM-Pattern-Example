@@ -17,8 +17,15 @@ class PersonTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpFriendCellConfigurations()
     }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        if superview != nil{
+            setUpFriendCellConfigurations()
+        }
+    }
+    
     
     private func setUpFriendCellConfigurations(){
         
@@ -27,11 +34,11 @@ class PersonTableViewCell: UITableViewCell {
         
         switch viewModel.isFollowing{
         case true:
-            followingButton.setTitle("Follow", for: .normal)
-            followingButton.setImage(UIImage(systemName: "plus"), for: .normal)
-        case false:
             followingButton.setTitle("Unfollow", for: .normal)
             followingButton.setImage(UIImage(systemName: "minus"), for: .normal)
+        case false:
+            followingButton.setTitle("Follow", for: .normal)
+            followingButton.setImage(UIImage(systemName: "plus"), for: .normal)
         }
     }
 

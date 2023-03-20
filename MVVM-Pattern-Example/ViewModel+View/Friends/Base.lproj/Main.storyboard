@@ -31,6 +31,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jdF-vp-ijh"/>
+                    <connections>
+                        <outlet property="friendsTableView" destination="J40-8v-Hda" id="62E-Ch-h2Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

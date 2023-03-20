@@ -20,8 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qh-8f-dfs">
                         <rect key="frame" x="8" y="8" width="398" height="69"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Omt-ic-fxq">
-                                <rect key="frame" x="8" y="5" width="60" height="59"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Omt-ic-fxq">
+                                <rect key="frame" x="8" y="6.5" width="60" height="56.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cct-cb-eLY">
                                 <rect key="frame" x="76" y="34" width="127" height="12"/>
@@ -70,10 +70,16 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="followingButton" destination="33H-bt-0yW" id="hJr-sS-Ci8"/>
+                <outlet property="name" destination="lc6-6E-PBm" id="uVz-iZ-Mtc"/>
+                <outlet property="username" destination="Cct-cb-eLY" id="oPE-dH-fc4"/>
+            </connections>
             <point key="canvasLocation" x="64" y="127"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

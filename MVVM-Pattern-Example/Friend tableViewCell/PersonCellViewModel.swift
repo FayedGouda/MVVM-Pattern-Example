@@ -11,8 +11,12 @@ class PersonCellViewModel{
     
     private var model:FriendsModel
     
+    var updateCellAt:(_ indexPath:IndexPath)->Void = { index in }
+    
+    var isFollowing:Bool
     init(with model:FriendsModel){
         self.model = model
+        isFollowing = model.isFollowing
     }
 }
 
@@ -24,16 +28,4 @@ extension PersonCellViewModel {
     var userName:String{
         return model.username
     }
-    
-    var isFollowing:Bool{
-        get {
-            return model.isFollowing
-        }
-        
-        set {
-            self.isFollowing = newValue
-        }
-       
-    }
-    
 }

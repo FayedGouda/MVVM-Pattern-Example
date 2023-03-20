@@ -14,6 +14,12 @@ class FriendsViewModel{
     //A simple closure to tell our viewController that we did recive data successfully
     var didFinishLoadingFriends:(_ success:Bool)->Void = {success in}
     
+    var updateCellAt:(_ indexPath:IndexPath)->Void = { index in }
+    
+    init(){
+        getFriends()
+    }
+    
     ///You could get this data from api call
     func getFriends(){
         friends.append(FriendsModel(id: 1, name: "Youssef", username: "@youssef"))
